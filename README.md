@@ -57,7 +57,7 @@ for easy reference:
 
 [Comment: Amit] We can use the following architecture to design a gateway node in a redundant manner:
 
-![Design for Gateway Node](cluster-membership-service/doc/images/membership_service_topology.png)
+![Design for Gateway Node](https://raw.githubusercontent.com/aksinghdce/cluster-membership-service/master/doc/images/Membership%20service%20topology.svg)
 
 
 5. You will have to pay attention to the message format for messages exchanged by the membership service. You may need to marshal platform-dependent fields (such as ints) into a platform-independent format. An example is Google Protocol Buffers that you may choose to use. This is not a requirement. You should clearly document your protocol message format.
