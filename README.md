@@ -54,5 +54,11 @@ for easy reference:
 2. You can choose where a new machine should be added in an extended ring so as to satisfy the requirements. Think of how many successors and predecessors are needed to satisfy the requirements.
 3. For detecting failures, or for tracking voluntary departures of machines, you should not use a master node because such a node can fail and its failure must be detected. 
 4. It is, however, acceptable to designate a gateway node that processes join requests. If — and when — the gateway node is down, new joins cannot be processed but failures should be detected and departures should be processed.
+
+[Comment: Amit] We can use the following architecture to design a gateway node in a redundant manner:
+
+![Design for Gateway Node](https://drive.google.com/open?id=1UL8l85EvzsQfFQTvRbotewQ4b2FDn5ql)
+
+
 5. You will have to pay attention to the message format for messages exchanged by the membership service. You may need to marshal platform-dependent fields (such as ints) into a platform-independent format. An example is Google Protocol Buffers that you may choose to use. This is not a requirement. You should clearly document your protocol message format.
 6. Have the membership service daemon processes log messages sent or received. You can then use your implementation from the previous assignment to debug. Integration with an implementation of the distributed log query mechanism is important.
